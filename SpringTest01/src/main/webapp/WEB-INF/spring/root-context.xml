@@ -13,12 +13,9 @@
 	<bean id="ds"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://@localhost:3306/springtest"/> 
-		<property name="username" value="tch2000"/> 
-		<property name="password" value="tmdqo132"/> 
-		<!--<property name="url" value="jdbc:mysql://@52.78.8.223:3306/springtest" />
+		<property name="url" value="jdbc:mysql://52.78.8.223:3306/springtest" />
 		<property name="username" value="pentacore" />
-		<property name="password" value="pentacore123" />-->
+		<property name="password" value="pentacore123" />
 	</bean>
 
 	<!-- Oracle DBCP -->

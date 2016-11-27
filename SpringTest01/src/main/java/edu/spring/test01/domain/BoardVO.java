@@ -39,11 +39,15 @@ public class BoardVO {
 	public int getBno() {
 		return bno;
 	}
-
+	
 	public String getUserid() {
 		return userid;
 	}
-
+	
+	public void setUserid(String userid){
+		this.userid = userid;
+	}
+	
 	public Date getRegdate() {
 		return regdate;
 	}

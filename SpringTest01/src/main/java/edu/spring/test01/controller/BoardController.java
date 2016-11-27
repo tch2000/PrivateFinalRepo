@@ -39,8 +39,4 @@ public class BoardController {
 		return "redirect:list";
 	}
 	
-	
-	
-	
-
 }

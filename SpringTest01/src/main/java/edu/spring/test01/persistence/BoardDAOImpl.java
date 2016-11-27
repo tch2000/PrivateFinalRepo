@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import edu.spring.test01.domain.BoardVO;
 
+@Repository
 public class BoardDAOImpl implements BoardDAO {
 	private static final String NAMESPACE = "edu.spring.test01.BoardMapper";
 	//private static final Logger logger = LoggerFactory.getLogger(BoardDAOImpl.class);

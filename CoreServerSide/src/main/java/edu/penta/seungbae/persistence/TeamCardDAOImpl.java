@@ -2,20 +2,29 @@ package edu.penta.seungbae.persistence;
 
 import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import edu.penta.seungbae.domain.TeamCardDTO;
 
+@Repository
 public class TeamCardDAOImpl implements TeamCardDAO{
+	
+	private static final String NAMESPACE = "edu.penta.seungbae.teamcard";
+	
+	@Autowired
+	private SqlSession sqlSession;
 
 	@Override
 	public int insert(TeamCardDTO vo) {
-		// TODO Auto-generated method stub
+		// TODO:
 		return 0;
 	}
 
 	@Override
 	public List<TeamCardDTO> select() {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectList(NAMESPACE +".selectAll");
 	}
 
 	@Override

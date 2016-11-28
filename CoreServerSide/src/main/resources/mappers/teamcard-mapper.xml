@@ -4,22 +4,24 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.penta.seungbae.teamcard">
 
-<!-- 	<select id="selectAll" resultType="TeamCardDTO">
+ 	<select id="selectAll" resultType="TeamCardDTO">
 		SELECT 
-		t.team_id, t.team_name, t.team_intro, t.team_startday, 
-		user_id, team_part, user_profile, recruit_hits
-		required_skill_1, required_skill_2, required_skill_3, required_skill_4,
-		required_skill_5, required_skill_6, required_skill_7, required_skill_8,
-		required_skill_9, required_skill_10
+		t.team_id, t.team_name, t.team_intro, t.team_start, 
+		u.user_id, tmp.team_part, u.user_profile, rp.recruit_hits
+		rs.required_skill_1, rs.required_skill_2, rs.required_skill_3, rs.required_skill_4,
+		rs.required_skill_5, rs.required_skill_6, rs.required_skill_7, rs.required_skill_8,
+		rs.required_skill_9, rs.required_skill_10
 		
 		FROM
-		team t, manage_team_part mtp, required_skill rs, user u, recruit_team rt
+		team t, manage_team_part mtp, required_skill rs, user u, recruit_team rt, recruit_project rp
 		
 		WHERE
-		
+		t.team_id = rp.team_id 
+		and t.team_id = mtp.team_id 
+		and t.team_id = rs.team_id
 
 		ORDER BY DESC
-		team_startday	
+		team_start	
 	</select>
 	
 	<select id="selectByTeamId" resultType="TeamCardDTO">
@@ -36,15 +38,6 @@
 		WHERE
 		team_id=${team_id}
 	</select>
-	
-	<delete>
-	
-	
-	
-	</delete>  -->
-
-	
-
 
  	
 </mapper>  

@@ -9,7 +9,8 @@
 		t.team_id, t.team_name, t.team_intro, t.team_start, 
 		u.user_id, tmp.team_part, u.user_profile, rp.recruit_hits
 		rs.required_skill_1, rs.required_skill_2, rs.required_skill_3, rs.required_skill_4,
-		rs.required_skill_5, rs.required_skill_6, rs.required_skill_7, rs.required_skill_8,
+		rs.required_skill_5, rs.required_skill_6, rs.required_skill_7, r
+		s.required_skill_8,
 		rs.required_skill_9, rs.required_skill_10
 		
 		FROM

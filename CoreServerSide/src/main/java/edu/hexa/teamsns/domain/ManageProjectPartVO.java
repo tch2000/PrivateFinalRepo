@@ -1,6 +1,7 @@
 package edu.hexa.teamsns.domain;
 
 public class ManageProjectPartVO {
+	private int part_no;
 	private String project_id;
 	private String user_id;
 	private boolean captain_yn;
@@ -8,12 +9,21 @@ public class ManageProjectPartVO {
 	
 	public ManageProjectPartVO(){}
 	
-	public ManageProjectPartVO(String project_id, String user_id, boolean captain_yn, String team_part) {
+	public ManageProjectPartVO(int part_no, String project_id, String user_id, boolean captain_yn, String team_part) {
 		super();
+		this.part_no = part_no;
 		this.project_id = project_id;
 		this.user_id = user_id;
 		this.captain_yn = captain_yn;
 		this.team_part = team_part;
+	}
+	
+	public int getPart_no() {
+		return part_no;
+	}
+
+	public void setPart_no(int part_no) {
+		this.part_no = part_no;
 	}
 
 	public String getProject_id() {

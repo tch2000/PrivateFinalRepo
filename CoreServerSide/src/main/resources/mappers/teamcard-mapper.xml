@@ -21,8 +21,7 @@
 		and t.team_id = mtp.team_id 
 		and t.team_id = rs.team_id
 
-		ORDER BY DESC
-		team_start	
+		ORDER BY team_start DESC
 	</select>
 	
 	<select id="selectByTeamId" resultType="TeamCardDTO">
@@ -37,7 +36,7 @@
 		team, manage_team_part, required_skill, user, recruit_team
 		
 		WHERE
-		team_id=${team_id}
+		team_id=#{team_id}
 	</select>
 
  	

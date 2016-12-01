@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -50,22 +51,16 @@
 	<h5 class="teamname">팀 이름이 입력됩니다.</h5>
 	<div class="skillbox">
 		<ul class="skills">
-			<li>php</li>
-			<li>java</li>
-			<li>css</li>
-			<li>python</li>
-			<li>html</li>
-			<li>photoShop</li>
-			<li>dreamWeaver</li>
-			<li>matlab</li>
-			<li>potran</li>
-			<li>c#</li>
-			<li>unity</li>
-			<li>dreamWeaver</li>
-			<li>matlab</li>
-			<li>potran</li>
-			<li>c#</li>
-			<li>unity</li>
+			<li>${rsList.skill_1 }</li>
+			<li>${rsList.skill_2 }</li>
+			<li>${rsList.skill_3 }</li>
+			<li>${rsList.skill_4 }</li>
+			<li>${rsList.skill_5 }</li>
+			<li>${rsList.skill_6 }</li>
+			<li>${rsList.skill_7 }</li>
+			<li>${rsList.skill_8 }</li>
+			<li>${rsList.skill_9 }</li>
+			<li>${rsList.skill_10 }</li>
 		</ul>
 	</div>
 	<div class="memberbox">

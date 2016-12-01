@@ -7,12 +7,13 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import edu.hexa.teamsns.domain.ManageProjectPartVO;
 import edu.penta.seungbae.domain.ProjectCardDTO;
 
 @Repository
 public class ProjectCardDAOImpl implements ProjectCardDAO{
 	
-	private static final String NAMESPACE = "edu.penta.seungbae.teamcard";
+	private static final String NAMESPACE = "edu.penta.seungbae.proejctcard";
 	
 	@Autowired
 	private SqlSession sqlSession;
@@ -20,10 +21,15 @@ public class ProjectCardDAOImpl implements ProjectCardDAO{
 
 	@Override
 	public List<ProjectCardDTO> select() {
-		ArrayList<ProjectCardDAO> projectCardDAOList;
+		//ArrayList<ProjectCardDAO> projectCardDAOList;
+		
+		
+		List<ManageProjectPartVO> projectPartVOs = sqlSession.selectList(NAMESPACE + ".selectManageProjectParts");
 		
 		
 		
+//		ProjectCardDTO projectCardDTO = 
+//				new ProjectCardDTO(projectVO, requiredSkillVO, projectPartVOs, recruitProjectVO);
 		
 		
 		

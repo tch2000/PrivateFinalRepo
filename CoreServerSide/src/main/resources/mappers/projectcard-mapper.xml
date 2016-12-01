@@ -2,29 +2,60 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="edu.penta.seungbae.teamcard">
-
- 	<select id="selectAll" resultType="TeamCardDTO">
-		SELECT 
-		t.team_id, t.team_name, t.team_intro, t.team_start, 
-		u.user_id, tmp.team_part, u.user_profile, rp.recruit_hits
-		rs.required_skill_1, rs.required_skill_2, rs.required_skill_3, rs.required_skill_4,
-		rs.required_skill_5, rs.required_skill_6, rs.required_skill_7, r
-		s.required_skill_8,
-		rs.required_skill_9, rs.required_skill_10
-		
+<mapper namespace="edu.penta.seungbae.proejctcard">
+	<!-- 
+	private ProjectVO projectVO;
+	private RequiredSkillVO requiredSkillVO;
+	private List<ManageProjectPartVO> mPPVOList;
+	private RecruitProjectVO recruitProjectVO;
+ -->
+ 	
+	
+	<select id="selectOneProject" resultType="edu.hexa.teamsns.domain.ProjectVO">
+		SELECT
+			*
 		FROM
-		team t, manage_team_part mtp, required_skill rs, user u, recruit_team rt, recruit_project rp
-		
+			project
 		WHERE
-		t.team_id = rp.team_id 
-		and t.team_id = mtp.team_id 
-		and t.team_id = rs.team_id
-
-		ORDER BY team_start DESC
+			pid = #{pid}		
 	</select>
 	
-	<select id="selectByTeamId" resultType="TeamCardDTO">
+	<select id="selectProjects" resultType="edu.hexa.teamsns.domain.ProjectVO">
+		SELECT
+			*
+		FROM
+			project		
+	</select>
+
+	<select id="selectOneRequiredSkills" resultType="edu.hexa.teamsns.domain.RequiredSkillVO">
+		SELECT
+			*
+		FROM
+			required_skill
+		WHERE
+			pid = #{pid}		
+	</select>
+	
+	<select id="selectRequiredSkills" resultType="edu.hexa.teamsns.domain.RequiredSkillVO">
+		SELECT
+			*
+		FROM
+			required_skill	
+	</select>
+	
+	<select id="selectManageProjectParts" resultType="edu.hexa.teamsns.domain.ManageProjectPartVO">
+		SELECT
+			*
+		FROM
+			manage_project_part
+	</select>
+	
+	
+	
+	
+	
+		
+<!-- <select id="selectByTeamId" resultType="TeamCardDTO">
 		SELECT 
 		team_id, team_name, team_intro, team_startday, 
 		user_id, team_part, user_profile, recruit_hits
@@ -36,8 +67,8 @@
 		team, manage_team_part, required_skill, user, recruit_team
 		
 		WHERE
-		team_id=#{team_id}
-	</select>
+		team_id=${team_id}
+	</select> -->	
 
  	
 </mapper>  

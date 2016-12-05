@@ -61,8 +61,8 @@
 	<div class="memberbox">
 		<table>
 			<tr class="memberNames">
-				<c:forTokens var="parts" items="${vo.part }" delims=",">
-				<th>${parts }</th>
+				<c:forTokens var="part" items="${vo.parts }" delims=",">
+				<th>${part }</th>
 				</c:forTokens>
 			</tr>
 			<tr class="memberPhotos">

@@ -11,11 +11,11 @@ public class ProjectCardDTO {
 	private String title; 
 	private Integer rbno, recruit_hits;
 	private Timestamp rcstart, rcend;
-	private String part;
+	private String parts;
 	
 	public ProjectCardDTO(String pid, String category, String pname, String intro, String district, String meeting_area,
 			Date start, Date end, String skills, String title, Integer rbno, Integer recruit_hits, Timestamp rcstart,
-			Timestamp rcend, String part) {
+			Timestamp rcend, String parts) {
 		super();
 		this.pid = pid;
 		this.category = category;
@@ -31,7 +31,7 @@ public class ProjectCardDTO {
 		this.recruit_hits = recruit_hits;
 		this.rcstart = rcstart;
 		this.rcend = rcend;
-		this.part = part;
+		this.parts = parts;
 	}
 
 	public String getPid() {
@@ -146,12 +146,12 @@ public class ProjectCardDTO {
 		this.rcend = rcend;
 	}
 
-	public String getPart() {
-		return part;
+	public String getParts() {
+		return parts;
 	}
 
-	public void setPart(String part) {
-		this.part = part;
+	public void setParts(String parts) {
+		this.parts = parts;
 	}
 	
 	

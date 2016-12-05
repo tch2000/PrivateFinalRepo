@@ -53,16 +53,9 @@
 	<h5 class="teamname">${vo.pname }</h5>
 	<div class="skillbox">
 		<ul class="skills">
-			<li>${vo.skill_1 }</li>
-			<li>${vo.skill_2 }</li>
-			<li>${vo.skill_3 }</li>
-			<li>${vo.skill_4 }</li>
-			<li>${vo.skill_5 }</li>
-			<li>${vo.skill_6 }</li>
-			<li>${vo.skill_7 }</li>
-			<li>${vo.skill_8 }</li>
-			<li>${vo.skill_9 }</li>
-			<li>${vo.skill_10 }</li>
+			<c:forTokens var="skill" items="${vo.skills }" delims=",">
+			<li>${skill }</li>
+			</c:forTokens>
 		</ul>
 	</div>
 	<div class="memberbox">

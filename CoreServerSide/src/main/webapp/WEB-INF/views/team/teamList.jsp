@@ -33,45 +33,44 @@
 			<li>해외</li>
 		</ul>
 </div>
+
+<c:forEach var="vo" items="${projectCardList }">
 <div class="cardlist">
 	<img id="logo" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRmHEcuCodTRyqammU2sZxpkTwxSiKVBE9xEntM8LA6sd5qoRVd"
 		alt =" 이미지 로딩 실패시 나타나는 설명">
 	<div class="counts">
 	<ul>
-		<li>조회수</li>
+		<li>조회수: ${vo.recruit_hits }</li>
 	</ul>
 	</div>
 	<div class="dates">
 	<ul>
-		<li>등록일: 2016.11.21</li>
-		<li>마감일: 2016.12.13</li>
+		<li>등록일: ${vo.rcstart }</li>
+		<li>마감일: ${vo.rcend }</li>
 	</ul>
 	</div>	
-	<h4 class="teamdesc">팀 한줄 설명이 입력됩니다.</h4>
-	<h5 class="teamname">팀 이름이 입력됩니다.</h5>
+	<h4 class="teamdesc">${vo.intro }</h4>
+	<h5 class="teamname">${vo.pname }</h5>
 	<div class="skillbox">
 		<ul class="skills">
-			<li>${projectCardList.skill_1 }</li>
-			<li>${rsList.skill_2 }</li>
-			<li>${rsList.skill_3 }</li>
-			<li>${rsList.skill_4 }</li>
-			<li>${rsList.skill_5 }</li>
-			<li>${rsList.skill_6 }</li>
-			<li>${rsList.skill_7 }</li>
-			<li>${rsList.skill_8 }</li>
-			<li>${rsList.skill_9 }</li>
-			<li>${rsList.skill_10 }</li>
+			<li>${vo.skill_1 }</li>
+			<li>${vo.skill_2 }</li>
+			<li>${vo.skill_3 }</li>
+			<li>${vo.skill_4 }</li>
+			<li>${vo.skill_5 }</li>
+			<li>${vo.skill_6 }</li>
+			<li>${vo.skill_7 }</li>
+			<li>${vo.skill_8 }</li>
+			<li>${vo.skill_9 }</li>
+			<li>${vo.skill_10 }</li>
 		</ul>
 	</div>
 	<div class="memberbox">
 		<table>
 			<tr class="memberNames">
-				<th>안드로이드</th>
-				<th>UI/UX 디자이너</th>
-				<th>프론트엔드</th>
-				<th>백엔드</th>
-				<th>마케팅</th>
-				<th>통계학</th>
+				<c:forTokens var="parts" items="${vo.part }" delims=",">
+				<th>${parts }</th>
+				</c:forTokens>
 			</tr>
 			<tr class="memberPhotos">
 				<td><img src="http://writedirection.com/website/wp-content/uploads/2016/09/blank-profile-picture-973460_960_720.png" alt="참여자1"></td>
@@ -84,6 +83,7 @@
 		</table>	
 	</div>
 </div>
+</c:forEach>
 
 </body>
 </html>

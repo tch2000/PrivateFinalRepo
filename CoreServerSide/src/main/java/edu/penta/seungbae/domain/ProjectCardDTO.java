@@ -9,14 +9,13 @@ public class ProjectCardDTO {
 	private Date start, end;
 	private String skill_1, skill_2, skill_3, skill_4, skill_5, skill_6, skill_7, skill_8, skill_9, skill_10;
 	private String title; 
-	private Integer rbno;
+	private Integer rbno, recruit_hits;
 	private Timestamp rcstart, rcend;
 	private String part;
-	
 	public ProjectCardDTO(String pid, String category, String pname, String intro, String district, String meeting_area,
 			Date start, Date end, String skill_1, String skill_2, String skill_3, String skill_4, String skill_5,
 			String skill_6, String skill_7, String skill_8, String skill_9, String skill_10, String title, Integer rbno,
-			Timestamp rcstart, Timestamp rcend, String part) {
+			Integer recruit_hits, Timestamp rcstart, Timestamp rcend, String part) {
 		super();
 		this.pid = pid;
 		this.category = category;
@@ -38,11 +37,11 @@ public class ProjectCardDTO {
 		this.skill_10 = skill_10;
 		this.title = title;
 		this.rbno = rbno;
+		this.recruit_hits = recruit_hits;
 		this.rcstart = rcstart;
 		this.rcend = rcend;
 		this.part = part;
 	}
-	
 	public String getPid() {
 		return pid;
 	}
@@ -162,6 +161,12 @@ public class ProjectCardDTO {
 	}
 	public void setRbno(Integer rbno) {
 		this.rbno = rbno;
+	}
+	public Integer getRecruit_hits() {
+		return recruit_hits;
+	}
+	public void setRecruit_hits(Integer recruit_hits) {
+		this.recruit_hits = recruit_hits;
 	}
 	public Timestamp getRcstart() {
 		return rcstart;

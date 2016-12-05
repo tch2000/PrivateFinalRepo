@@ -51,7 +51,7 @@
 	<h5 class="teamname">팀 이름이 입력됩니다.</h5>
 	<div class="skillbox">
 		<ul class="skills">
-			<li>${rsList.skill_1 }</li>
+			<li>${projectCardList.skill_1 }</li>
 			<li>${rsList.skill_2 }</li>
 			<li>${rsList.skill_3 }</li>
 			<li>${rsList.skill_4 }</li>

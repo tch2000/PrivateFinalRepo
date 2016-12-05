@@ -21,20 +21,6 @@ public class ProjectCardDAOImpl implements ProjectCardDAO{
 
 	@Override
 	public List<ProjectCardDTO> select() {
-		//ArrayList<ProjectCardDAO> projectCardDAOList;
-		
-		
-		List<ManageProjectPartVO> projectPartVOs = sqlSession.selectList(NAMESPACE + ".selectManageProjectParts");
-		
-		
-		
-//		ProjectCardDTO projectCardDTO = 
-//				new ProjectCardDTO(projectVO, requiredSkillVO, projectPartVOs, recruitProjectVO);
-		
-		
-		
-		
-			
 		return sqlSession.selectList(NAMESPACE +".selectAll");
 	}
 

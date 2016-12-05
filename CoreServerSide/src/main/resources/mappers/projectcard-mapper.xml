@@ -3,72 +3,69 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.penta.seungbae.proejctcard">
-	<!-- 
-	private ProjectVO projectVO;
-	private RequiredSkillVO requiredSkillVO;
-	private List<ManageProjectPartVO> mPPVOList;
-	private RecruitProjectVO recruitProjectVO;
- -->
- 	
-	
+	<!-- private ProjectVO projectVO; private RequiredSkillVO requiredSkillVO; 
+		private List<ManageProjectPartVO> mPPVOList; private RecruitProjectVO recruitProjectVO; -->
+<!-- 
+
 	<select id="selectOneProject" resultType="edu.hexa.teamsns.domain.ProjectVO">
 		SELECT
-			*
+		*
 		FROM
-			project
+		project
 		WHERE
-			pid = #{pid}		
+		pid = #{pid}
 	</select>
-	
+
 	<select id="selectProjects" resultType="edu.hexa.teamsns.domain.ProjectVO">
 		SELECT
-			*
+		*
 		FROM
-			project		
+		project
 	</select>
 
 	<select id="selectOneRequiredSkills" resultType="edu.hexa.teamsns.domain.RequiredSkillVO">
 		SELECT
-			*
+		*
 		FROM
-			required_skill
+		required_skill
 		WHERE
-			pid = #{pid}		
+		pid = #{pid}
 	</select>
-	
+
 	<select id="selectRequiredSkills" resultType="edu.hexa.teamsns.domain.RequiredSkillVO">
 		SELECT
-			*
+		*
 		FROM
-			required_skill	
-	</select>
-	
-	<select id="selectManageProjectParts" resultType="edu.hexa.teamsns.domain.ManageProjectPartVO">
-		SELECT
-			*
-		FROM
-			manage_project_part
-	</select>
-	
-	
-	
-	
-	
-		
-<!-- <select id="selectByTeamId" resultType="TeamCardDTO">
-		SELECT 
-		team_id, team_name, team_intro, team_startday, 
-		user_id, team_part, user_profile, recruit_hits
-		required_skill_1, required_skill_2, required_skill_3, required_skill_4,
-		required_skill_5, required_skill_6, required_skill_7, required_skill_8,
-		required_skill_9, required_skill_10
-		
-		FROM
-		team, manage_team_part, required_skill, user, recruit_team
-		
-		WHERE
-		team_id=${team_id}
-	</select> -->	
+		required_skill
+	</select> -->
 
- 	
+	<select id="selectAll" resultType="edu.penta.seungbae.domain.ProjectCardDTO">
+		SELECT
+			p.pid, p.category, p.pname, p.intro, p.district, p.meeting_area, p.start, p.end,
+			rs.skill_1, rs.skill_2, rs.skill_3, rs.skill_4, rs.skill_5, rs.skill_6, rs.skill_7, rs.skill_8, rs.skill_9, rs.skill_10,
+			rp.title, rp.rbno, rp.rcstart, rp.rcend,
+			group_concat(mpp.part separator ',')
+		FROM 
+			pentacore.project p, pentacore.required_skill rs,
+			pentacore.recruit_project rp, pentacore.manage_project_part mpp
+		WHERE 
+			p.pid = rs.pid and rs.pid = rp.pid and p.pid = mpp.pid
+		Group by 
+			pid
+		Order by rp.rcend desc;
+	</select>
+
+
+
+
+
+
+	<!-- <select id="selectByTeamId" resultType="TeamCardDTO"> SELECT team_id, 
+		team_name, team_intro, team_startday, user_id, team_part, user_profile, recruit_hits 
+		required_skill_1, required_skill_2, required_skill_3, required_skill_4, required_skill_5, 
+		required_skill_6, required_skill_7, required_skill_8, required_skill_9, required_skill_10 
+		FROM team, manage_team_part, required_skill, user, recruit_team WHERE team_id=${team_id} 
+		</select> -->
+
+
 </mapper>  
